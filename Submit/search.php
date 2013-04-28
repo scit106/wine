@@ -30,6 +30,9 @@
 					)
 				) ;
 	$resulttable = ltrim(str_replace("id=\"v65-storeProductasList\"", "", $resulttable));
+	$resulttable = str_replace("<th class=\"right\">&nbsp;</th>", "<th hidden>&nbsp;</th>", $resulttable);
+	$resulttable = str_replace("<td class=\"right\" id=\"v65-td-productListAddToCart\">", "<td hidden class=\"right\" id=\"v65-td-productListAddToCart\">", $resulttable);
+	
 	echo "$resulttable";
 ?>
 </body>
