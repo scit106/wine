@@ -32,7 +32,18 @@
 	$resulttable = ltrim(str_replace("id=\"v65-storeProductasList\"", "", $resulttable));
 	$resulttable = str_replace("<th class=\"right\">&nbsp;</th>", "<th hidden>&nbsp;</th>", $resulttable);
 	$resulttable = str_replace("<td class=\"right\" id=\"v65-td-productListAddToCart\">", "<td hidden class=\"right\" id=\"v65-td-productListAddToCart\">", $resulttable);
-	$resulttable = str_replace("href=\"", "href=\"http://www.ballsquarefinewines.com", $resulttable);
+	$resulttable = str_replace("href=\"", "href=\"http://www.ballsquarefinewines.com", $resulttable); //links each row back to bsfw
+	$resulttable = str_replace(
+						"<th hidden>&nbsp;</th>"
+						, "<th hidden>&nbsp;</th>
+							<th>Select Your Wine</th>"
+						, $resulttable
+						); //to add a "use this!" column
+	$resulttable = str_replace(array("\n", "\r", "\r\n","\t","\n\t","\r\n\t","\r\t"), '', $resulttable); //removes tabs and returns for easier replaces
+	$resulttable = str_replace(	"</td></tr>"
+					, "</td><td><a href=\"placeholder\">Use This!<a></td>
+					</tr>"
+					, $resulttable);
 	echo "$resulttable";
 ?>
 </body>
