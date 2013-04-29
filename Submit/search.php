@@ -39,6 +39,7 @@
 				<input type=\"hidden\" name=\"documentlink\" value=\"$1\">
 				<input class=\"btn btn-link\" type=\"submit\" value=\"$2\">"
 				, $resulttable);
+	$resulttable = str_replace("<table", "<table class=\"table table-hover\"", $resulttable);
 	echo "$resulttable";
 ?>
 </body>
