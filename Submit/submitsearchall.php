@@ -2,9 +2,11 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	<title>Classy F***ing Wine Submission Confirmation</title>
 </head>
 <body>
+	<div class="formalign">
 <?php
 
 if($_POST["type"] == "red"){
@@ -50,10 +52,13 @@ if (!mysql_query($sql,$con))
   {
   die('Error: ' . mysql_error());
   }
-echo "<h3>Thank You For Submitting</h3>";
+echo "<h1>Thank You For Submitting</h1>
+		<p>You will be redirected momentarily. 
+		If not, click <a href=\"http://www.bathrobeman.com\">here</a></p>";
 echo "<meta http-equiv=\"REFRESH\"content=\"5;http://www.bathrobeman.com/\">";
 
 mysql_close($con);
 ?>
+</div>
 </body>
 </html>

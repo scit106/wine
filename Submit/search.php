@@ -2,10 +2,11 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	<title>Classy F***ing Wine Search Results</title>
 </head>
 <body>
-
+<div class="formalign">
 <?php
 	$searchterm = $_POST["winename"];
 	$searchterm = str_replace(" ", "+", rtrim(ltrim($searchterm)));
@@ -42,6 +43,7 @@
 	$resulttable = str_replace("<table", "<table class=\"table table-hover\"", $resulttable);
 	echo "$resulttable";
 ?>
+</div>
 </body>
 </hmtl>
 

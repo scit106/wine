@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	<title>Classy F***ing Wine Submission</title>
 </head>
 <body>
@@ -39,7 +40,8 @@ $winename = rtrim(ltrim(strip_tags(
 				)
 			)));
 ?>
-<form action="submitsearchall.php" method="post">
+<form class="form-horizontal" action="submitsearchall.php" method="post">
+	<div class="formalign">
 	Wine Name <input type="text" name="winename" value="<?php echo $winename; ?>"><br>
 	Style <input type="text" name="style"><br>
 	Type <select name="type">
@@ -54,6 +56,7 @@ $winename = rtrim(ltrim(strip_tags(
 	Tasting Number <input type="text" name="tastingnumber"><br>
 	<input type="hidden" name="winepage" value="<?php $_POST["documentlink"]?>"><br>
 	<input type="submit" value="Enter!">
+</div>
 </form>
 </body>
 </html>
