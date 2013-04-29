@@ -37,7 +37,7 @@
 				"/<a href=\"(.*?)\">(.*?)<\/a>/"
 				, "<form method=\"post\" action=\"submitsearch.php\">
 				<input type=\"hidden\" name=\"documentlink\" value=\"$1\">
-				<input type=\"submit\" value=\"$2\">"
+				<input class=\"btn btn-link\" type=\"submit\" value=\"$2\">"
 				, $resulttable);
 	echo "$resulttable";
 ?>
