@@ -9,21 +9,17 @@
 	<div class = "formalign">
 	<h3>Submit Your Vote</h3>
 		<p>
-		<form action="insertred.php" method="post">
-		Red Wine <input type="number" name="red">
+		<form action="insert.php" method="post">
+		Number <input type="number" name="vote">
+		Wine Type <select name="type">
+					<option value="red">Red</option>
+					<option value="white">White</option>
+					<option value="sparkling">Sparkling</option>
+				</select>
 		<input type="submit" value="Vote!">
-	</form><br>
-		<form action="insertwhite.php" method="post">
-		White Wine <input type="number" name="white">
-		<input type="submit" value="Vote!">
-	</form><br>
-		<form action="insertsparkling.php" method="post">
-		Sparkling Wine <input type="number" name="sparkling">
-		<input type="submit" value="Vote!">
-	</form><br>
 		</p>
 	</form>
-	</p>
+	<p><a href="http://www.bathrobeman.com">Home</a></p>
 </div>
 </body>
 </html>
