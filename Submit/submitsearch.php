@@ -50,10 +50,10 @@ $winename = rtrim(ltrim(strip_tags(
 		<option value="sparkling">Sparkling</option>
 	</select><br>
 	Vineyard <input type="text" name="manufacturer" value="<?php echo $manufacturer; ?>"><br>
-	Year <input type="text" name="year" value="<?php echo $year; ?>"><br>
-	Price <input type="text" name="price" value="<?php echo $price; ?>"><br>
+	Year <input type="number" name="year" value="<?php echo $year; ?>"><br>
+	Price <input type="number" step=".01" name="price" value="<?php echo $price; ?>"><br>
 	Purchaser <input type="text" name="purchaser"><br>
-	Tasting Number <input type="text" name="tastingnumber"><br>
+	Tasting Number <input type="number"  name="tastingnumber"><br>
 	<input type="hidden" name="winepage" value="<?php $_POST["documentlink"]?>"><br>
 	<input type="submit" value="Enter!">
 </div>
