@@ -9,11 +9,11 @@
 
 if($_POST["type"] == "red"){
 	$table = "reds";
-	} elseif ($_POST["type"] == "white") {
+	} elseif ($_POST["type"] == "white"){
 		$table = "whites";
-	} else {
+	} elseif ($_POST["type"] == "sparkling"){
 		$table = "sparkling";
-	}
+	} 
 
 $style = $_POST["style"];
 $manufacturer = $_POST["manufacturer"];

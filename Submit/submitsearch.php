@@ -42,7 +42,7 @@ $winename = rtrim(ltrim(strip_tags(
 <form action="submitsearchall.php" method="post">
 	Wine Name <input type="text" name="winename" value="<?php echo $winename; ?>"><br>
 	Style <input type="text" name="style"><br>
-	Type <select>
+	Type <select name="type">
 		<option value="red">Red</option>
 		<option value="white">White</option>
 		<option value="sparkling">Sparkling</option>
