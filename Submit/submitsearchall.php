@@ -25,7 +25,13 @@ $purchaser = $_POST["purchaser"];
 $tastingnumber = $_POST["tastingnumber"];
 $winename = $_POST["winename"];
 
+//lets clean up these inputs a bit
+$style = str_replace("'", "''", $style);
+$manufacturer = str_replace("'", "''", $manufacturer);
+$purchaser = str_replace("'", "''", $purchaser);
+$winename = str_replace("'", "''", $winename);
 
+//Set up the SQL inserts
 $con = mysql_connect("localhost","wino","");
 if (!$con)
   {
