@@ -96,6 +96,7 @@ echo "</table>";
  mysql_close($con);
 
 ?>
+<p><a href="http://www.bathrobeman.com">[HOME]</a></p>
 </div>
 </body>
 </html>

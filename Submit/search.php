@@ -43,6 +43,7 @@
 	$resulttable = str_replace("<table", "<table class=\"table table-hover\"", $resulttable);
 	echo "$resulttable";
 ?>
+<p>Don't See Your Wine Listed?<a href="submitsearch.php">Click Here</a> To Enter It Manually</p>
 </div>
 </body>
 </hmtl>
