@@ -1,4 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<title>Classy F***ing Wine Submission Confirmation</title>
+</head>
+<body>
 <?php
+
+if($_POST["type"] == "red"){
+	$table = "reds";
+	} elseif ($_POST["type"] == "white") {
+		$table = "whites";
+	} else {
+		$table = "sparkling";
+	}
+
+$style = $_POST["style"];
+$manufacturer = $_POST["manufacturer"];
+$year = $_POST["year"];
+$price = $_POST["price"];
+$purchaser = $_POST["purchaser"];
+$tastingnumber = $_POST["tastingnumber"];
+$winename = $_POST["winename"];
+
 
 $con = mysql_connect("localhost","wino","");
 if (!$con)
@@ -8,7 +32,7 @@ if (!$con)
 
 mysql_select_db("wine", $con);
 
-	$sql .=" INSERT INTO reds (wineid, style, manufacturer, year, price, purchaser, tastingnumber, winename)
+	$sql .=" INSERT INTO $table (wineid, style, manufacturer, year, price, purchaser, tastingnumber, winename)
 	VALUES(
 	UUID()
 	, '$style'
@@ -26,7 +50,10 @@ if (!mysql_query($sql,$con))
   {
   die('Error: ' . mysql_error());
   }
-echo "<meta http-equiv=\"REFRESH\"content=\"0;http://www.bathrobeman.com/\">";
+echo "<h3>Thank You For Submitting</h3>";
+echo "<meta http-equiv=\"REFRESH\"content=\"5;http://www.bathrobeman.com/\">";
 
 mysql_close($con);
 ?>
+</body>
+</html>
