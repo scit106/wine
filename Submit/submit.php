@@ -24,6 +24,8 @@ $price = $_POST["price"];
 $purchaser = $_POST["purchaser"];
 $tastingnumber = $_POST["tastingnumber"];
 $winename = $_POST["winename"];
+$externalid = $_POST["externalid"]
+$externalsource = $_POST["externalsource"]
 
 //lets clean up these inputs a bit
 $style = str_replace("'", "''", $style);
@@ -50,6 +52,8 @@ mysql_select_db("wine", $con);
 	, '$purchaser'
 	, '$tastingnumber'
 	, '$winename'
+	, '$externalid'
+	, '$externalsource'
 	);";
 
 

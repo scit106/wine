@@ -36,14 +36,14 @@
 	$resulttable = str_replace("href=\"", "href=\"http://www.ballsquarefinewines.com", $resulttable); //links each row back to bsfw
 	$resulttable = preg_replace(
 				"/<a href=\"(.*?)\">(.*?)<\/a>/"
-				, "<form method=\"post\" action=\"submitsearch.php\">
+				, "<form method=\"post\" action=\"editdetail.php\">
 				<input type=\"hidden\" name=\"documentlink\" value=\"$1\">
 				<input class=\"btn btn-link\" type=\"submit\" value=\"$2\">"
 				, $resulttable);
 	$resulttable = str_replace("<table", "<table class=\"table table-hover\"", $resulttable);
 	echo "$resulttable";
 ?>
-<p>Don't See Your Wine Listed?<a href="submitsearch.php">Click Here</a> To Enter It Manually</p>
+<p>Don't See Your Wine Listed?<a href="editdetail.php">Click Here</a> To Enter It Manually</p>
 </div>
 </body>
 </hmtl>

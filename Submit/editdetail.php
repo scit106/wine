@@ -40,7 +40,7 @@ $winename = rtrim(ltrim(strip_tags(
 				)
 			)));
 ?>
-<form class="form-horizontal" action="submitsearchall.php" method="post">
+<form class="form-horizontal" action="submit.php" method="post">
 	<div class="formalign">
 	Wine Name <input type="text" name="winename" value="<?php echo $winename; ?>"><br>
 	Style <input type="text" name="style"><br>
