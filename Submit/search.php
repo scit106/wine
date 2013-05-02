@@ -12,11 +12,8 @@
 	$searchterm = $_POST["winename"];
 	$searchterm = str_replace(" ", "%20", rtrim(ltrim($searchterm)));
 	//Calls snooth API with query of searchterm, 20 results
-	$resultpage = file_get_contents("http://api.snooth.com/wines?akey=$apikey&q=$searchterm&n=20"); 
+	$resultpage = file_get_contents("http://api.snooth.com/wines?akey=$apikey&q=$searchterm&n=20&a=0"); 
 	$jsonoutput = json_decode($resultpage);
-	// str_replace(replace this, with this, in this) 
-	//substr($string, starting position (int), length (int))
-	// strpos(string, find, start)
 ?>
 <table class="table table-hover">
 	<tr>
@@ -26,17 +23,15 @@
 		<th>Winery</th>
 		<th>Region</th>
 		<th>Price</th>
-		<th hidden>External ID</th>
 	</tr>
 <?php
 foreach ($jsonoutput->wines as $result) {
-	echo "<tr><td>{$result->name}</td>
-	<td>{$result->varietal}</td>
-	<td>{$result->type}</td>
-	<td>{$result->winery}</td>
-	<td>{$result->region}</td>
-	<td>{$result->price}</td>
-	<td hidden>{$result->code}</td></tr>";
+	echo "<tr><td><a href=\"editdetail.php?wineid={$result->code}\">{$result->name}</a></td>
+	<td><a href=\"editdetail.php?wineid={$result->code}\">{$result->varietal}</a></td>
+	<td><a href=\"editdetail.php?wineid={$result->code}\">{$result->type}</a></td>
+	<td><a href=\"editdetail.php?wineid={$result->code}\">{$result->winery}</a></td>
+	<td><a href=\"editdetail.php?wineid={$result->code}\">{$result->region}</a></td>
+	<td><a href=\"editdetail.php?wineid={$result->code}\">{$result->price}</a></td></tr>";
 }
 ?>
 <p>Don't See Your Wine Listed?<a href="editdetail.php">Click Here</a> To Enter It Manually</p>
