@@ -37,6 +37,7 @@ $tastenotes = $wineinfo[0]["winery_tasting_notes"];
 	Purchaser <input type="text" name="purchaser"><br>
 	Tasting Number <input type="number"  name="tastingnumber" required><br>
 	<input type="hidden" name="externalid" value="<?php echo $externalid; ?>">
+	<input type="hidden" name = "externalsource" value="snooth">
 	<input type="submit" value="Enter!">
 </form>
 </div>
