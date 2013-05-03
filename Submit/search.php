@@ -34,7 +34,8 @@ foreach ($jsonoutput->wines as $result) {
 	<td><a href=\"editdetail.php?wineid={$result->code}\">{$result->price}</a></td></tr>";
 }
 ?>
-<p>Don't See Your Wine Listed?<a href="editdetail.php">Click Here</a> To Enter It Manually</p>
+</table>
+<p>Don't See Your Wine Listed? <a href="editdetail.php">Click Here</a> To Enter It Manually</p>
 </div>
 </body>
 </hmtl>
