@@ -28,10 +28,10 @@ $externalid = $_POST["externalid"];
 $externalsource = $_POST["externalsource"];
 
 //lets clean up these inputs a bit
-$style = str_replace("'", "''", $style);
-$manufacturer = str_replace("'", "''", $manufacturer);
-$purchaser = str_replace("'", "''", $purchaser);
-$winename = str_replace("'", "''", $winename);
+$style = strip_tags(str_replace("'", "''", $style));
+$manufacturer = strip_tags(str_replace("'", "''", $manufacturer));
+$purchaser = strip_tags(str_replace("'", "''", $purchaser));
+$winename = strip_tags(str_replace("'", "''", $winename));
 
 //Set up the SQL inserts
 $con = mysql_connect("localhost","wino","");
