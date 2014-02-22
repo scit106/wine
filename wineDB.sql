@@ -1,4 +1,4 @@
-create database wine;
+CREATE DATABASE IF NOT EXISTS wine;
 
 use wine;
 
