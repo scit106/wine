@@ -23,37 +23,63 @@ $pic = $wineinfo[0]["image"];
 $description = $wineinfo[0]["wm_notes"];
 $tastenotes = $wineinfo[0]["winery_tasting_notes"];
 ?>
-<div class="left">
-<form class="form-horizontal" action="submit.php" method="post">
-	Wine Name <input type="text" name="winename" value="<?php echo $winename; ?>"><br>
-	Style <input type="text" name="style" value="<?php echo $style; ?>" ><br>
-	Type <select name="type">
-		<option value="red" <?php if($type == "Red Wine") echo "selected";?>>Red</option>
-		<option value="white" <?php if($type == "White Wine") echo "selected";?>>White</option>
-		<option value="sparkling" <?php if($type == "Sparkling Wine") echo "selected";?>>Sparkling</option>
-	</select><br>
-	Vineyard <input type="text" name="winery" value="<?php echo $winery; ?>"><br>
-	Year <input type="number" name="year" value="<?php echo $year; ?>"><br>
-	Price <input type="number" step=".01" name="price" value="<?php echo $price; ?>"><br>
-	Purchaser <input type="text" name="purchaser"><br>
-	Tasting Number <input type="number"  name="tastingnumber" required><br>
-	<input type="hidden" name="externalid" value="<?php echo $externalid; ?>">
-	<input type="hidden" name = "externalsource" value="snooth">
-	<input type="submit" value="Enter!">
-</form>
-</div>
-<div class="right">
-	<img src="<?php echo $pic; ?>">
-	<!-- To Do: Add sciencey info here like alcohol content, sugar, ph -->
-	<?php if ($description): ?>
-		<h3>Description</h3>
-		<p><?php echo $description; ?></p>
-	<?php endif; ?>
-	<?php if ($tastenotes): ?>
-		<h3>What You'll Taste</h3>
-		<p><?php echo $tastenotes; ?></p>
-	<?php endif; ?>
-
+<div class="detail-page">
+	<h1>Edit Your Wine Details</h1>
+	<div class="form-details">
+		<form class="form-horizontal" action="submit.php" method="post">
+			<label>
+				<div class='form-label'>Wine Name</div>
+				<input type="text" name="winename" value="<?php echo $winename; ?>">
+			</label>
+			<label>
+				<div class='form-label'>Style</div>
+				<input type="text" name="style" value="<?php echo $style; ?>" >
+			</label>
+			<label>
+				<div class='form-label'>Type</div>
+				<select name="type">
+					<option value="red" <?php if($type == "Red Wine") echo "selected";?>>Red</option>
+					<option value="white" <?php if($type == "White Wine") echo "selected";?>>White</option>
+					<option value="sparkling" <?php if($type == "Sparkling Wine") echo "selected";?>>Sparkling</option>
+				</select>
+			</label>
+			<label>
+				<div class='form-label'>Vineyard</div>
+				<input type="text" name="winery" value="<?php echo $winery; ?>">
+			</label>
+			<label>
+				<div class='form-label'>Year</div>
+				<input type="number" name="year" value="<?php echo $year; ?>">
+			</label>
+			<label>
+				<div class='form-label'>Price</div>
+				<input type="number" step=".01" name="price" value="<?php echo $price; ?>">
+			</label>
+			<label>
+				<div class='form-label'>Purchaser</div>
+				<input type="text" name="purchaser">
+			</label>
+			<label>
+				<div class='form-label'>Tasting Number</div>
+				<input type="number"  name="tastingnumber" required><br>
+			</label>
+			<input type="hidden" name="externalid" value="<?php echo $externalid; ?>">
+			<input type="hidden" name = "externalsource" value="snooth">
+			<button class="full-button" type="submit" value="Enter!">Enter</button>
+		</form>
+	</div>
+	<div class="wine-details">
+		<img src="<?php echo $pic; ?>">
+		<!-- To Do: Add sciencey info here like alcohol content, sugar, ph -->
+		<?php if ($description): ?>
+			<h3>Description</h3>
+			<p><?php echo $description; ?></p>
+		<?php endif; ?>
+		<?php if ($tastenotes): ?>
+			<h3>What You'll Taste</h3>
+			<p><?php echo $tastenotes; ?></p>
+		<?php endif; ?>
+	</div>
 </div>
 </body>
 </html>

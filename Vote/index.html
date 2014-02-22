@@ -6,19 +6,23 @@
 	<title>Classy F***ing Voting</title>
 </head>
 <body>
-	<div class = "formalign">
-	<h3>Submit Your Vote</h3>
-		<p>
-		<form action="insert_vote.php" method="post">
-		Number <input type="number" name="vote"><br>
-		Wine Type <select name="type">
-					<option value="red">Red</option>
-					<option value="white">White</option>
-					<option value="sparkling">Sparkling</option>
-				</select> <br>
-		<input type="submit" value="Vote!">
-		</p>
-	</form>
+	<div class = "centered width-restricted">
+		<h3>Submit Your Vote</h3>
+			<form action="insert_vote.php" method="post">
+				<label>
+					<div class='form-label'>Number</div>
+					<input type="number" name="vote">
+				</label>
+				<label>
+					<div class='form-label'>Wine Type</div>
+					<select name="type">
+							<option value="red">Red</option>
+							<option value="white">White</option>
+							<option value="sparkling">Sparkling</option>
+					</select>
+				</label>
+				<button class="full-button" type="submit" value="Vote!">Vote!</button>
+			</form>
 	<p><a href="../">[Home]</a></p>
 </div>
 </body>

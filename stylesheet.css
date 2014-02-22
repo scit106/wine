@@ -1,25 +1,94 @@
 /* Style Sheet for BathrobeMan.Com Home Page */
-body {background-color: rgb(245,245,250)}
-h1{font-family: "Helvetica", "Arial", sans-serif;
-font-size:32px;
-text-align:center;
-color:rgb(210,210,210);
-font-weight:200;
+body {
+	background-color: rgb(245,245,250);
 }
-p{font-family:"Helvetica","Arial","sans-serif";
-text-align:center;
-/*vertical-align:middle;*/
-color:rgb(210,210,210);
-font-weight:200;
+
+h1{
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size:32px;
+	text-align:center;
+	color:rgb(150, 150, 150);
+	font-weight:200;
 }
-a{color:rgb(210,210,210);
-text-decoration:none;
+
+p{
+	font-family:"Helvetica","Arial","sans-serif";
+	font-weight:200;
 }
-a:hover {font-weight:bold;}
-a:active {color:rgb(230,230,230);}
-.formalign{
-	margin-top: 2%;
-	margin-left: 5%;
-	margin-right: 5%;
-	line-height: 300%;
+
+a{
+	text-decoration: none;
+	color: rgb(50,50,50);
+}
+
+a:hover {
+	font-weight:bold;
+}
+
+a:active {
+	color:rgb(230,230,230);
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+label {
+	padding-bottom: 10px;
+}
+
+.width-restricted {
+	max-width: 400px;
+}
+
+.full-button {
+	width: 100%;
+	height: 40px;
+	border-radius: 5px;
+	background-color: rgb(126,20,20);
+	color: white;
+	border: 0px;
+}
+
+.full-button:hover {
+	background-color: rgb(200,50,50);
+}
+
+.form-label {
+	font-weight: 600;
+	padding: 10px;
+}
+
+.table-page {
+	padding: 20px 60px;
+}
+
+.detail-page {
+	padding: 20px 40px;
+}
+
+.form-details {
+	display: inline-block;
+	width: 400px;
+	vertical-align: top;
+	padding-left: 20px;
+	padding-right: 10px;
+	padding-top: 20px
+}
+
+.form-details input {
+	width: 75%;
+}
+
+.wine-details {
+	display: inline-block;
+	width: 400px;
+	text-align: center;
+	vertical-align: top;
+	padding-left: 10px;
+	padding-right: 20px;
+	padding-top: 20px
 }

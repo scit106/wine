@@ -39,7 +39,7 @@ create table sparkling (
 	, externalsource varchar(36)
 	);
 
-create user 'wino'@'localhost' identified by '';
+create user 'wino'@'localhost' identified by 'SuperSecretPassword';
 
 grant insert, select ON wine.*  to 'wino'@'localhost';
 

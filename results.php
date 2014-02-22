@@ -6,7 +6,8 @@
 	<title>Classy F***ing Voting Results</title>
 </head>
 <body>
-<div class="formalign">
+<div class="table-page">
+	<h1>Results</h1>
 <?php
 $con = mysql_connect("127.0.0.1","wino","SuperSecretPassword");
 if (!$con)

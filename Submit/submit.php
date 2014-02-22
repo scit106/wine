@@ -6,7 +6,7 @@
 	<title>Classy F***ing Wine Submission Confirmation</title>
 </head>
 <body>
-	<div class="formalign">
+	<div class="centered">
 <?php
 
 if($_POST["type"] == "red"){
