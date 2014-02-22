@@ -8,7 +8,7 @@
 <body>
 <div class="formalign">
 <?php
-$con = mysql_connect("localhost","wino","");
+$con = mysql_connect("127.0.0.1","wino","SuperSecretPassword");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
@@ -16,21 +16,21 @@ if (!$con)
 
 mysql_select_db("wine", $con);
 
-	$sql .= " SELECT * FROM 
-			(SELECT 
+	$sql .= " SELECT * FROM
+			(SELECT
 				winename
 				, 'white' as type
 				, whites.tastingnumber
 				, purchaser
 				, count(votes.tastingnumber) AS votes
-			FROM whites 
+			FROM whites
 			LEFT JOIN votes
 				ON votes.wineid = whites.wineid
 			group by winename, purchaser
 
-			UNION	
+			UNION
 
-			SELECT 
+			SELECT
 				winename
 				, 'red' as type
 				, reds.tastingnumber
@@ -43,7 +43,7 @@ mysql_select_db("wine", $con);
 
 			UNION
 
-			SELECT 
+			SELECT
 				winename
 				, 'sparkling' as type
 				, sparkling.tastingnumber
@@ -52,8 +52,8 @@ mysql_select_db("wine", $con);
 			FROM sparkling
 			LEFT JOIN votes
 				ON votes.wineid = sparkling.wineid
-			group by winename, purchaser 
-			) a 
+			group by winename, purchaser
+			) a
 			" ;
 
 if ($_GET['sort'] == 'number')
@@ -96,7 +96,7 @@ echo "</table>";
  mysql_close($con);
 
 ?>
-<p><a href="http://www.bathrobeman.com">[HOME]</a></p>
+<p><a href="/wine">[HOME]</a></p>
 </div>
 </body>
 </html>

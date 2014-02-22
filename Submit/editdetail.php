@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
 	<title>Classy F***ing Wine Submission</title>
 </head>
 <body>
@@ -12,7 +12,7 @@ $wineid = $_GET["wineid"];
 $winepage = file_get_contents("http://api.snooth.com/wine?akey=$apikey&id=$wineid");
 $jsonoutput = json_decode($winepage, TRUE);
 $wineinfo = $jsonoutput["wines"];
-$manufacturer = $wineinfo[0]["winery"];
+$winery = $wineinfo[0]["winery"];
 $year = $wineinfo[0]["vintage"];
 $price = $wineinfo[0]["price"];
 $winename = $wineinfo[0]["name"];
@@ -32,7 +32,7 @@ $tastenotes = $wineinfo[0]["winery_tasting_notes"];
 		<option value="white" <?php if($type == "White Wine") echo "selected";?>>White</option>
 		<option value="sparkling" <?php if($type == "Sparkling Wine") echo "selected";?>>Sparkling</option>
 	</select><br>
-	Vineyard <input type="text" name="manufacturer" value="<?php echo $manufacturer; ?>"><br>
+	Vineyard <input type="text" name="winery" value="<?php echo $winery; ?>"><br>
 	Year <input type="number" name="year" value="<?php echo $year; ?>"><br>
 	Price <input type="number" step=".01" name="price" value="<?php echo $price; ?>"><br>
 	Purchaser <input type="text" name="purchaser"><br>
@@ -45,10 +45,14 @@ $tastenotes = $wineinfo[0]["winery_tasting_notes"];
 <div class="right">
 	<img src="<?php echo $pic; ?>">
 	<!-- To Do: Add sciencey info here like alcohol content, sugar, ph -->
-	<h3>Description</h3>
-	<p><?php echo $description; ?></p>
-	<h3>What You'll Taste</h3>
-	<p><?php echo $tastenotes; ?></p>
+	<?php if ($description): ?>
+		<h3>Description</h3>
+		<p><?php echo $description; ?></p>
+	<?php endif; ?>
+	<?php if ($tastenotes): ?>
+		<h3>What You'll Taste</h3>
+		<p><?php echo $tastenotes; ?></p>
+	<?php endif; ?>
 
 </div>
 </body>

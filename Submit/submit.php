@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
 	<title>Classy F***ing Wine Submission Confirmation</title>
 </head>
 <body>
@@ -15,10 +15,10 @@ if($_POST["type"] == "red"){
 		$table = "whites";
 	} elseif ($_POST["type"] == "sparkling"){
 		$table = "sparkling";
-	} 
+	}
 
 $style = $_POST["style"];
-$manufacturer = $_POST["manufacturer"];
+$winery = $_POST["winery"];
 $year = $_POST["year"];
 $price = $_POST["price"];
 $purchaser = $_POST["purchaser"];
@@ -29,12 +29,12 @@ $externalsource = $_POST["externalsource"];
 
 //lets clean up these inputs a bit
 $style = strip_tags(str_replace("'", "''", $style));
-$manufacturer = strip_tags(str_replace("'", "''", $manufacturer));
+$winery = strip_tags(str_replace("'", "''", $winery));
 $purchaser = strip_tags(str_replace("'", "''", $purchaser));
 $winename = strip_tags(str_replace("'", "''", $winename));
 
 //Set up the SQL inserts
-$con = mysql_connect("localhost","wino","");
+$con = mysql_connect("127.0.0.1","wino","SuperSecretPassword");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
@@ -45,7 +45,7 @@ mysql_select_db("wine", $con);
 	$sql .=" INSERT INTO $table (
 			wineid
 			, style
-			, manufacturer
+			, winery
 			, year
 			, price
 			, purchaser
@@ -56,7 +56,7 @@ mysql_select_db("wine", $con);
 	VALUES(
 	UUID()
 	, '$style'
-	, '$manufacturer'
+	, '$winery'
 	, '$year'
 	, '$price'
 	, '$purchaser'
@@ -73,9 +73,9 @@ if (!mysql_query($sql,$con))
   die('Error: ' . mysql_error());
   }
 echo "<h1>Thank You For Submitting</h1>
-		<p>You will be redirected momentarily. 
-		If not, click <a href=\"http://www.bathrobeman.com\">here</a></p>";
-echo "<meta http-equiv=\"REFRESH\"content=\"5;http://www.bathrobeman.com/\">";
+		<p>You will be redirected momentarily.
+		If not, click <a href=\"../\">here</a></p>";
+echo "<meta http-equiv=\"REFRESH\"content=\"5;../\">";
 
 mysql_close($con);
 ?>

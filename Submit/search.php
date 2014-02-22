@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="../bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
 	<title>Classy F***ing Wine Search Results</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
 	$searchterm = $_POST["winename"];
 	$searchterm = str_replace(" ", "%20", rtrim(ltrim($searchterm)));
 	//Calls snooth API with query of searchterm, 20 results
-	$resultpage = file_get_contents("http://api.snooth.com/wines?akey=$apikey&q=$searchterm&n=20&a=0"); 
+	$resultpage = file_get_contents("http://api.snooth.com/wines?akey=$apikey&q=$searchterm&n=20&a=0");
 	$jsonoutput = json_decode($resultpage);
 ?>
 <table class="table table-hover">
