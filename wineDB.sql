@@ -1,5 +1,7 @@
 create database wine;
 
+use wine;
+
 create table reds (
 	wineid char(36)
 	, style varchar(256)
